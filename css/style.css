@@ -1,0 +1,1185 @@
+/* ------ Font ------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* ------ The whole thing ------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+/* ------ Colors ------ */
+:root{
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --second-text-color: #ff004f;
+    --main-color: #00abf0;
+    --third-text-color: #d1d1d1;
+    --correct-text-color: #61b752;
+}
+/* ------ HTML ------ */
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+/* ------ Header ------ */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+.header.sticky{
+    background: var(--bg-color);
+}
+/* ------ Logo ------ */
+.logo{
+    position: relative;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+/* ------ Navbar ------ */
+.navbar{
+    position: relative;
+}
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+/* ------ Other ------ */
+#menu-icon{
+    position: relative;
+    font-size: 3.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; 
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+/* ------ Home ------ */
+.home{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background-image: url('/Website/images/home.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.home-content{
+    max-width: 60rem;
+    z-index: 99;
+}
+.home-content h1{
+    position: relative;
+    display: inline-block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.home-content .text-animate{
+    position: relative;
+    width: 32.8rem;
+}
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+}
+.home.show-animate .home-content .text-animate h3{
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+}
+.home.show-animate .home-content .text-animate h3::before{
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+.home-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;
+}
+/* ------ Home > Button ------ */
+.btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+}
+.btn-box .btn{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+}
+.btn-box .btn:nth-child(1){
+    background: transparent;
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(1):hover{
+    color: var(--bg-color);
+}
+.btn-box .btn:nth-child(1)::before{
+    background: var(--main-color);
+}
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--main-color);
+}
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+}
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .3s;
+}
+.btn-box .btn:hover::before{
+    width: 100%;
+}
+/* ------ Home > Links ------ */
+.home-sci{
+    position: absolute;
+    bottom: 4rem;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+}
+.home-sci a:hover{
+    color: var(--bg-color);
+    transform: translateY(-5px);
+}
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .3s;
+}
+.home-sci a:hover::before{
+    width: 100%;
+}
+/* ------ Home > Image ------ */
+.home-imgHover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+}
+.home-imgHover:hover{
+    background: var(--bg-color);
+    opacity: .8;
+}
+/* ------ About ------ */
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+/* ------ About > Heading ------ */
+.heading{
+    position: relative;
+    display: inline-block;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+/* ------ About > Span (All) ------ */
+span{
+    color: var(--main-color);
+}
+/* ------ About > Image ------ */
+.about-img{
+    position: relative;
+    display: inline-block;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-img img{
+    display: inline-block;
+    width: 90%;
+    border-radius: 50%;
+    border: .1rem solid var(--main-color);
+}
+/* ------ About > Image > Circle-spin------ */
+.about-img .circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border-top: .1rem solid var(--second-bg-color);
+    border-bottom: .1rem solid var(--second-bg-color);
+    border-left: .1rem solid var(--main-color);
+    border-right: .1rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+/* ------ About > Content ------ */
+.about-content{
+    text-align: center;
+}
+/* ------ About > Content > H3------ */
+.about-content h3{
+    position: relative;
+    display: inline-block;
+    font-size: 2.6rem;
+}
+/* ------ About > Content > Span------ */
+.about-content span{
+    color: var(--main-color);
+}
+/* ------ About > Content > Paragraph------ */
+.about-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+/* ------ About > Button------ */
+.btn-box.btns{
+    display: inline-block;
+    width: 15rem;
+}
+.btn-box.btns a::before{
+    background: var(--second-bg-color);
+}
+/* ------ About-2 > Row ------ */
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* ------ About-2 > About-col-1 ------ */
+.about-col-1{
+    flex-basis: 35%;
+}
+/* ------ About-col-1 > About-img > Image > Circle-spin------ */
+.about-col-1 .about-img img .circle-spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border-top: .1rem solid var(--second-bg-color);
+    border-bottom: .1rem solid var(--second-bg-color);
+    border-left: .1rem solid var(--main-color);
+    border-right: .1rem solid var(--main-color);
+}
+/* ------ About-2 > About-col-2 ------ */
+.about-col-2{
+    flex-basis: 60%;
+}
+/* ------ About-col-2 > Sub-title ------ */
+.sub-title{
+    font-size: 40px;
+    font-weight: 600;
+}
+/* ------ About-col-2 > Paragraph ------ */
+.about-col-2 p{
+    font-size: 14px;
+    font-weight: 300;
+}
+/* ------ About-col-2 > Tab-title ------ */
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+/* ------ About-col-2 > Tab-links ------ */
+.tab-titles .tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+}
+.tab-titles .tab-links:hover{
+    color: var(--main-color);
+}
+.tab-titles .tab-links::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .5s;
+}
+.tab-links.active-link::after{
+    width: 100%;
+}
+/* ------ Tab-contents ------ */
+.tab-contents{
+    display: none;
+}
+/* ------ Tab-contents > UL > LI ------ */
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    font-size: 18px;
+}
+/* ------ Tab-contents > UL > LI > Span ------ */
+.tab-contents ul li span{
+    color: var(--main-color);
+    font-size: 21px;
+    font-weight: 500;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+/* ------ About-column > About-box ------ */
+.about-column .about-box{
+    position: relative;
+}
+/* ------ About-box > About-contents ------ */
+.about-box .about-contents{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    overflow: hidden;
+    z-index: 1;
+}
+/* ------ About-contents > Progress ------ */
+.about-contents .progress{
+    padding: 1rem 0;
+}
+/* ------ About-contents > Progress > H3 ------ */
+.about-contents .progress h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+/* ------ About-contents > Progress > H3 > Span------ */
+.about-contents .progress h3 span{
+    color: var(--text-color);
+}
+/* ------ About-contents > Progress > Bar ------ */
+.about-contents .progress .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+/* ------ About-contents > Progress > Bar > Span ------ */
+.about-contents .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+/* ------ About-column2 ------ */
+/* ------ About-column > About-box ------ */
+.about-column2 .about-box2{
+    position: relative;
+}
+/* ------ About-column > Title ------ */
+.about-column2 .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+/* ------ About-box > About-contents ------ */
+.about-box2 .about-contents2{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    overflow: hidden;
+    z-index: 1;
+}
+/* ------ About-contents > Progress ------ */
+.about-contents2 .progress2{
+    padding: 1rem 0;
+}
+/* ------ About-contents > Progress > H3 ------ */
+.about-contents2 .progress2 h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+/* ------ About-contents > Progress > H3 > Span------ */
+.about-contents2 .progress2 h3 span{
+    color: var(--text-color);
+}
+/* ------ About-contents > Progress > Bar ------ */
+.about-contents2 .progress2 .bar2{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+/* ------ About-contents > Progress > Bar > Span ------ */
+.about-contents2 .progress2 .bar2 span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+/* ------ About-column > About-contents > Progress > Percentage 1------ */
+.about-column:nth-child(1) .about-contents .progress:nth-child(1) .bar span{
+    width: 84%;
+}
+.about-column:nth-child(1) .about-contents .progress:nth-child(2) .bar span{
+    width: 87%;
+}
+.about-column:nth-child(1) .about-contents .progress:nth-child(3) .bar span{
+    width: 56%;
+}
+/* ------ About-column > About-contents > Progress > Percentage 2------ */
+.about-column2:nth-child(1) .about-contents2 .progress2:nth-child(1) .bar2 span{
+    width: 56%;
+}
+.about-column2:nth-child(1) .about-contents2 .progress2:nth-child(2) .bar2 span{
+    width: 78%;
+}
+.about-column2:nth-child(1) .about-contents2 .progress2:nth-child(3) .bar2 span{
+    width: 85%;
+}
+/* Services */
+#services{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+#services .container .sub-title{
+    font-size: 40px;
+    font-weight: 600;
+}
+/* Services-list */
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: var(--second-bg-color);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background .3s, transform .3s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: var(--second-text-color);
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--main-color);
+}
+.services-list div a{
+    text-decoration: none;
+    color: var(--main-color);
+    border: .3rem solid var(--main-color);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    display: inline-block;
+    transition: .3s;
+}
+.services-list div a:hover{
+    background: var(--main-color);
+    color: var(--second-bg-color);
+}
+.services-list div:hover{
+    background: linear-gradient(transparent, var(--second-bg-color));
+}
+/* ------ Season ------ */
+.season{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    background-color: var(--second-bg-color);
+}
+/* ------ Season > Season-row ------ */
+.season .season-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+/* ------ Season-row > Season-column ------ */
+.season-row .season-column{
+    flex: 1 1 40rem;
+}
+/* ------ Season-column > Title ------ */
+.season-column .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+/* ------ Season-column > Season-box ------ */
+.season-column .season-box{
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
+/* ------ Season-box > Season-content ------ */
+.season-box .season-content{
+    position: relative;
+    padding-left: 2rem;
+}
+.season-box .season-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+/* ------ Season-content > Content ------ */
+.season-content .content{
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.season-content .content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .3s;
+}
+.season-content .content:hover::before{
+    width: 100%;
+}
+/* ------ Season-content > Content > Year ------ */
+.season-content .content .year{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+/* ------ Season-content > Content > Year > I ------ */
+.season-content .content .year i{
+    padding-right: .5rem;
+}
+/* ------ Season-content > Content > H3 ------ */
+.season-content .content h3{
+    font-size: 2rem;
+    font-weight: 500;
+}
+/* ------ Season-content > Content > Paragraph ------ */
+.season-content .content p{
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+/* ------ Discord ------ */
+.discord{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+/* ------ Discord > H2------ */
+.discord h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* ------ Discord > Discord-row------ */
+.discord .discord-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+/* ------ Discord-row > Discord-column ------ */
+.discord-row .discord-column{
+    flex: 1 1 40rem;
+}
+/* ------ Discord-column > Title ------ */
+.discord-column .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+/* ------ Discord-column > Discord-box ------ */
+.discord-column .discord-box{
+    position: relative;
+}
+/* ------ Discord-box > Discord-content ------ */
+.discord-box .discord-content{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    overflow: hidden;
+    z-index: 1;
+}
+.discord-box .discord-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition: .3s;
+    opacity: .1;
+}
+.discord-box .discord-content:hover::before{
+    width: 100%;
+}
+/* ------ Discord-content > Progress ------ */
+.discord-content .progress{
+    padding: 1rem 0;
+}
+/* ------ Discord-content > Progress > H3 ------ */
+.discord-content .progress h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+/* ------ Discord-content > Progress > H3 > Span ------ */
+.discord-content .progress h3 span{
+    color: var(--text-color);
+}
+/* ------ Discord-content > Progress > Bar ------ */
+.discord-content .progress .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+/* ------ Discord-content > Progress > Bar > Span ------ */
+.discord-content .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+/* ------ Discord-column > Discord-content > Progress > Percentage 1 ------ */
+.discord-column:nth-child(1) .discord-content .progress:nth-child(1) .bar span{
+    width: 90%;
+}
+.discord-column:nth-child(1) .discord-content .progress:nth-child(2) .bar span{
+    width: 60%;
+}
+.discord-column:nth-child(1) .discord-content .progress:nth-child(3) .bar span{
+    width: 56%;
+}
+.discord-column:nth-child(1) .discord-content .progress:nth-child(4) .bar span{
+    width: 85%;
+}
+.discord-column:nth-child(1) .discord-content .progress:nth-child(5) .bar span{
+    width: 78%;
+}
+/* ------ Discord-column > Discord-content > Progress > Percentage 2 ------ */
+.discord-column:nth-child(2) .discord-content .progress:nth-child(1) .bar span{
+    width: 5%;
+}
+.discord-column:nth-child(2) .discord-content .progress:nth-child(2) .bar span{
+    width: 57%;
+}
+.discord-column:nth-child(2) .discord-content .progress:nth-child(3) .bar span{
+    width: 48%;
+}
+.discord-column:nth-child(2) .discord-content .progress:nth-child(4) .bar span{
+    width: 100%;
+}
+.discord-column:nth-child(2) .discord-content .progress:nth-child(5) .bar span{
+    width: 0%;
+}
+/* Suggestion2 */
+.suggestion{
+    padding-top: 180px;
+}
+.suggestion-left{
+    flex-basis: 35%;
+}
+.suggestion-right{
+    flex-basis: 60%;
+}
+.suggestion-left h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+.suggestion-left p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+.suggestion-left p i{
+    color: var(--main-color);
+    margin-right: 15px;
+    font-size: 25px;
+}
+.btn-box .btn.btn2{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
+}
+.suggestion-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: var(--second-bg-color);
+    padding: 15px;
+    margin: 15px 0;
+    color: var(--third-text-color);
+    font-size: 18px;
+    border-radius: 6px;
+}
+form input:focus:hover{
+    color: var(--text-color);
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#msg{
+    color: var(--correct-text-color);
+    margin: 60px 52rem;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+}
+/* ------ Footer ------ */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+}
+/* ------ Footer-text,
+   ------ Footer-iconTop ------ */
+.footer-text,
+.footer-iconTop{
+    position: relative;
+}
+/* ------ Footer-text > Paragraph ------ */
+.footer-text p{
+    font-size: 1.6rem;
+}
+/* ------ Footer-iconTop > A ------ */
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    overflow: hidden;
+    z-index: 1;
+}
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .3s;
+}
+.footer-iconTop a:hover::before{
+    width: 100%;
+}
+/* ------ Footer-iconTop > A > I ------ */
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .3s;
+}
+.footer-iconTop a:hover i{
+    color: var(--main-color);
+}
+/* ------ Media ------ */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+    section{
+        padding: 10rem 4% 2rem;
+    }
+    .home{
+        padding: 0 4%;
+    }
+    .footer{
+        padding: 2rem 4%;
+    }
+    #msg{
+        margin: 60px 41rem;
+    }
+}
+@media (max-width: 850px) {
+    .animate.home-img{
+        width: 55%;
+    }
+    .header{
+        background: var(--bg-color);
+    }
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .20s ease;
+        transition-delay: .20s;
+        z-index: 1;
+    }
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+    }
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .20s ease;
+        transition-delay: 0s;
+    }
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .20s;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .20s ease;
+        transition-delay: 0s;
+    }
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .20s;
+    }
+    #msg{
+        margin: 60px 35rem;
+    }
+}
+@media (max-width: 768px) {
+    .header{
+        background: var(--bg-color);
+    }
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .20s ease;
+        transition-delay: .20s;
+        z-index: 1;
+    }
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+    }
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .20s ease;
+        transition-delay: 0s;
+    }
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .20s;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .20s ease;
+        transition-delay: 0s;
+    }
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .20s;
+    }
+    .home{
+        background: var(--bg-color);
+    }
+    .about{
+        min-height: 80rem;
+        padding-top: 14rem;
+    }
+    .suggestion-left{
+        flex-basis: 40%;
+    }
+    .suggestion-right{
+        flex-basis: 40%;
+    }
+    #msg{
+        margin: 60px 44rem;
+    }
+}
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+        padding: 20px;
+    }
+    .home{
+        background: var(--bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about{
+        min-height: 80rem;
+        padding-top: 18rem;
+    }
+    .suggestion-left{
+        flex-basis: 40%;
+    }
+    .suggestion-right{
+        padding-top: 20px;
+    }
+    .footer{
+        padding-top: 40px;
+    }
+    .footer-iconTop a{
+        width: 38px;
+        height: 38px;
+    }
+    #msg{
+        margin: 60px 0rem;
+    }
+}
+@media (max-width: 462px) {
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+    .season{
+        padding: 10rem 4% 5rem 5%;
+    }
+    .suggestion form .input-box .input-field{
+        width: 100%;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p{
+        margin-top: 2rem;
+    }
+    .about{
+        min-height: 80rem;
+        padding-top: 15rem;
+        text-align: center;
+    }
+
+}
+@media (max-width: 371px) {
+    .home{
+        justify-content: center;
+    }
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .about{
+        min-height: 80rem;
+        padding-top: 6rem;
+    }
+    form .btn2{
+        padding: 10px 30px;
+        font-size: 18px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+}
+/* ------ Keyframes ------ */
+@keyframes homeBgText{
+    0%,10%,100%{
+        background-position: -33rem 0;
+    }
+    65%,85%{
+        background-position: 0 0;
+    }
+}
+@keyframes homeCursorText{
+    0%,10%,100%{
+        width: 0;
+    }
+    65%, 85%{
+        width: 100%;
+        opacity: 1;
+    }
+    75%,81%{
+        opacity: 0;
+    }
+}
+@keyframes aboutSpinner{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
+/* ------ End ------ */

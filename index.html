@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Others -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Mortal Realm | Website</title>
+
+    <!-- Links to CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/f4b1880fab.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo -->
+        <a href="#" class="logo">Mortal Realm</a>
+
+        <!-- Menu (Hidden for pc users but for phone users it will display) -->
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        
+        <!-- Navbar (For pc users only) -->
+        <nav class="navbar">
+            <a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="#about"><i class="fa-solid fa-address-card"></i> About</a>
+            <a href="#services"><i class="fa-solid fa-file"></i> Services</a>
+            <a href="#season"><i class="fa-solid fa-calendar-days"></i> Season</a>
+            <a href="#discord"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="#suggestion"><i class="fa-solid fa-message"></i> Suggestion</a>
+
+            <span class="active-nav"></span>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1>This is <span>Mortal Realm</span></h1>
+            <div class="text-animate">
+            <h3>Frontend Developer</h3></span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit hic vel, ut voluptatum
+            nam aspernatur adipisci ex animi. Iste possimus sint rerum. Corporis dolore quia explicabo
+            id aperiam, sapiente nobis.
+            </p>
+
+            <div class="btn-box">
+                <a href="#" class="btn">Get Started</a>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://discord.com/" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitch.com/" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+        </div>
+
+        <div class="home-imgHover"></div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <div class="about-img">
+                        <img src="images/about.jpg">
+                        <span class="circle-spin"></span>
+                    </div>
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">My <span>Abouts</span></h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione asperiores non dicta saepe, repellendus possimus
+                    et ipsa accusamus illum veniam neque odio reprehenderit commodi quas voluptatum! Ipsam quasi aut minus nobis voluptatum
+                    incidunt impedit ut non, eligendi ducimus dolore illo repellat aliquid architecto est maxime cum deserunt pariatur!
+                    Reprehenderit, quae.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('server')">Server</p>
+                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('history')">History</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="server">
+                        <ul>
+                            <div class="about-column">
+                                <div class="about-box">
+                                    <div class="about-contents">
+                                        <div class="progress">
+                                            <h3>Quality <span>84%</span></h3>
+                                            <div class="bar"><span></span></div>
+                                        </div>
+                                        <div class="progress">
+                                            <h3>Design <span>87%</span></h3>
+                                            <div class="bar"><span></span></div>
+                                        </div>
+                                        <div class="progress">
+                                            <h3>Active <span>56%</span></h3>
+                                            <div class="bar"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <div class="about-column2">
+                                <div class="about-box2">
+                                    <div class="about-contents2">
+                                        <div class="progress2">
+                                            <h3>Coding <span>56%</span></h3>
+                                            <div class="bar2"><span></span></div>
+                                        </div>
+                                        <div class="progress2">
+                                            <h3>Designing <span>78%</span></h3>
+                                            <div class="bar2"><span></span></div>
+                                        </div>
+                                        <div class="progress2">
+                                            <h3>Result <span>85%</span></h3>
+                                            <div class="bar2"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="history">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About | Script -->
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h1 class="sub-title">My <span>Services</span></h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, obcaecati officiis? Blanditiis aut laudantium iusto nostrum itaque nihil debitis quibusdam
+                    repudiandae nisi, nemo rerum sunt ut voluptatum molestias quidem porro.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, obcaecati officiis? Blanditiis aut laudantium iusto nostrum itaque nihil debitis quibusdam
+                    repudiandae nisi, nemo rerum sunt ut voluptatum molestias quidem porro.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Numquam, obcaecati officiis? Blanditiis aut laudantium iusto
+                    nostrum itaque nihil debitis quibusdam repudiandae nisi, nemo
+                    rerum sunt ut voluptatum molestias quidem porro.
+                    </p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Season -->
+    <section class="season" id="season">
+        <h2 class="heading">Our <span>Seasons</span></h2>
+
+        <div class="season-row">
+            <div class="season-column">
+                <h3 class="title">Starting Seasons</h3>
+
+                <div class="season-box">
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> August 23, 2023</div>
+                            <h3>Mortal Realm - <span>Season | 1</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 2</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 3</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 4</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 5</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-column">
+                <h3 class="title">Ending Seasons</h3>
+
+                <div class="season-box">
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> August 23, 2023</div>
+                            <h3>Mortal Realm - <span>Season | 6</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 7</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 8</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 9</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="season-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> No Updates</div>
+                            <h3>Mortal Realm - <span>Season | 10</span></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus tenetur voluptate,
+                            officia maiores sit quasi labore soluta vitae praesentium cumque, rerum expedita debitis
+                            voluptates doloremque ex voluptatum illum voluptatem laborum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord -->
+    <section class="discord" id="discord">
+        <h2 class="heading">Our <span>Discord</span></h2>
+
+        <div class="discord-row">
+            <div class="discord-column">
+                <h3 class="title">Our Discord's Status</h3>
+
+                <div class="discord-box">
+                    <div class="discord-content">
+                        <div class="progress">
+                            <h3>Ram <span>90%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Activeness <span>60%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Quality <span>56%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Goodness <span>85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Bots <span>78%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discord-column">
+                <h3 class="title">Our Discord's Server</h3>
+
+                <div class="discord-box">
+                    <div class="discord-content">
+                        <div class="progress">
+                            <h3>Peoples <span>5%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Fresh <span>57%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Channels <span>48%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Voice-Channels <span>100%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Events <span>0%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suggestion -->
+    <section class="suggestion" id="suggestion">
+        <div class="container">
+            <div class="row">
+                <div class="suggestion-left">
+                    <h1>Message me your <span>Suggestions</span> here!</h1>
+                    <p><i class="fa-solid fa-envelope"></i>Contact@example.com</p>
+                    <p><i class="fa-solid fa-phone"></i>0123456789</p>
+                    <br>
+                    <br>
+                    <div class="btn-box">
+                        <a href="files/CV.zip" download class="btn btn2">Download file.safe</a>
+                    </div>
+                </div>
+                <div class="suggestion-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Username" placeholder="Your Username." required>
+                        <input type="email" name="Email" placeholder="Your Email." required>
+                        <textarea name="Suggestion" rows="6" placeholder="Your suggestion here."></textarea>
+                        <div class="btn-box">
+                            <button type="submit" class="btn btn2">Send</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="msg-box">
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2023 - ? by Mortal Realm | All Rights Reserved. |</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="javascripts/script.js"></script>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwvivR4l0P8MKOG5MGNqqyMgTRdVo0HpGkK9-FdiqNBfX4rQiaVMqmv9-u3FNAP3zZkyw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Suggestion sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>
